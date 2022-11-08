@@ -1,0 +1,64 @@
+.rs-breadcrumb {
+	text-align: center;
+	margin-bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-weight: 500;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+
+	& > li {
+		font-size: 14px;
+	}
+
+	.rs-breadcrumb-separator:last-child {
+		display: none;
+	}
+
+	.rs-breadcrumb-item {
+		& > a {
+			color: $darkColor;
+
+			&:hover {
+				color: $colorMain;
+			}
+		}
+	}
+
+	.rs-breadcrumb-item-active {
+		color: $colorMain;
+	}
+
+	.rs-breadcrumb-separator {
+		color: $colorMain;
+		margin: 0 30px;
+	}
+
+	&.breadcrumb-layout-2 {
+		& > li {
+			font-size: 16px;
+		}
+
+		.rs-breadcrumb-item {
+			text-transform: capitalize;
+
+			& > a {
+				color: lighten(saturate(adjust-hue($fontColor, -11), 5.29), 18.82);
+				transition: all 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 0.5;
+				}
+			}
+		}
+
+		.rs-breadcrumb-separator {
+			margin: -11px 18px 0 18px;
+			font-size: 26px;
+			color: $colorMain;
+		}
+	}
+}

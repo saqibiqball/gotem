@@ -1,0 +1,54 @@
+.features-list {
+	background-color: $greyColor;
+	padding: 30px;
+
+	@media (min-width: 1600px) {
+		padding: 70px 60px;
+	}
+
+	&.no-bg {
+		background: transparent;
+		padding: 0;
+
+		li {
+			justify-content: space-between;
+
+			& > span {
+				&:first-child {
+					margin-right: 15px;
+				}
+				width: auto;
+			}
+		}
+	}
+
+	li {
+		padding-top: 18px;
+		padding-bottom: 18px;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			padding-bottom: 0;
+		}
+
+		& > span {
+			display: inline-flex;
+			align-items: center;
+			width: 50%;
+
+			svg {
+				color: $colorMain;
+			}
+
+			i,
+			svg {
+				margin-right: 10px;
+			}
+		}
+	}
+}

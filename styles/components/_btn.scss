@@ -1,0 +1,358 @@
+.rs-btn:not(.rs-btn-icon) {
+	display: inline-block;
+	text-decoration: none;
+	padding: 13px 20px;
+	//min-height: 40px;
+	letter-spacing: .1em;
+	line-height: 1;
+	text-align: center;
+	font-size: 12px;
+	text-transform: uppercase;
+	min-width: 150px;
+	font-weight: 600;
+	border-radius: 0;
+
+	&.btn-icon{
+		padding: 0;
+		min-width: auto;
+		background-color: transparent !important;
+		color: $darkColor;
+
+		&:hover{
+			color: $colorMain;
+		}
+
+		.rs-ripple-pond{
+			display: none;
+		}
+	}
+
+	&.rs-btn-ghost {
+		&.rs-btn-disabled {
+			border-color: $borderColor;
+			color: $fontColor;
+		}
+	}
+
+	&:focus,
+	&:active {
+		outline: none !important;
+		box-shadow: none !important;
+	}
+
+	&.rs-btn-big {
+		padding: 23px 20px;
+
+		@media (min-width: 1200px) {
+			min-width: 180px;
+			padding-left: 35px;
+			padding-right: 35px;
+		}
+	}
+
+	&.rs-btn-small {
+		@media (min-width: 1200px) {
+			padding: 13px 20px;
+		}
+		min-width: 120px;
+	}
+
+	&.rs-btn-width {
+		min-width: auto;
+	}
+
+	&.rs-btn-default {
+		&[disabled] {
+			opacity: 0.6;
+		}
+
+		&.rs-btn-main {
+			background: $colorMain;
+			color: $lightColor;
+			border: 1px solid transparent;
+			transition: all 0.3s ease-in-out;
+
+			&:hover:not([disabled]) {
+				background: $lightColor;
+				color: $darkColor;
+				border-color: $colorMain;
+			}
+		}
+
+		&.rs-btn-warning {
+			background: $colorWarning;
+			color: $lightColor;
+			border: 1px solid transparent;
+			transition: all 0.3s ease-in-out;
+
+			&:hover:not([disabled]) {
+				background: $lightColor;
+				color: $darkColor;
+				border-color: $colorWarning;
+			}
+		}
+
+		&.rs-btn-danger {
+			background: $colorDanger;
+			color: $lightColor;
+			border: 1px solid transparent;
+			transition: all 0.3s ease-in-out;
+
+			&:hover:not([disabled]) {
+				background: $lightColor;
+				color: $darkColor;
+				border-color: $colorDanger;
+			}
+		}
+
+		&.rs-btn-main2 {
+			background: $colorMain2;
+			color: $lightColor;
+			border: 1px solid transparent;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background: $lightColor;
+				color: $darkColor;
+				border-color: $colorMain2;
+			}
+		}
+
+		&.rs-btn-white {
+			background: $lightColor;
+			color: $darkColor;
+			border: 1px solid transparent;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background: $darkColor;
+				color: $lightColor;
+				border-color: $darkColor;
+			}
+		}
+
+		&.rs-btn-dark {
+			background: $darkColor;
+			color: $lightColor;
+			border: 1px solid transparent;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background: $lightColor;
+				color: $darkColor;
+				border-color: $darkColor;
+			}
+		}
+
+		.rs-loader-xs{
+			margin-top: -2px;
+			margin-bottom: -2px;
+		}
+	}
+
+	&.rs-btn-ghost {
+		border-width: 1px;
+
+		&.rs-btn-main {
+			background: $lightColor;
+			color: $darkColor;
+			border-color: $colorMain;
+			transition: all 0.3s ease-in-out;
+
+			&:hover:not([disabled]) {
+				background: $colorMain;
+				color: $lightColor;
+			}
+		}
+
+		&.rs-btn-main2 {
+			background: $lightColor;
+			color: $colorMain2;
+			border-color: $colorMain2;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background: $colorMain2;
+				color: $lightColor;
+			}
+		}
+	}
+
+	&.rs-btn-link {
+		color: $darkColor;
+		text-decoration: none;
+		text-transform: initial;
+		min-width: auto;
+
+		&:hover{
+			color: $colorMain;
+		}
+	}
+
+	&.btn-link {
+		border: unset !important;
+		border-radius: 50% !important;
+		line-height: 1;
+		width: 40px;
+		height: 40px;
+		min-width: auto;
+		padding: 0;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: transparent;
+		font-size: 16px;
+		transition: all 0.3s ease-in-out;
+
+		&:hover .feather {
+			color: $colorMain;
+		}
+	}
+
+	&.btn-delete,
+	&.btn-edit,
+	&.btn-save,
+	&.btn-cancel {
+		border: unset !important;
+		border-radius: 50% !important;
+		line-height: 1;
+		width: 45px;
+		height: 45px;
+		min-width: auto;
+		padding: 0;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: $lightColor;
+		font-size: 16px;
+		transition: all 0.3s ease-in-out;
+
+		.ico {
+			color: $colorMain;
+			transition: all 0.3s ease-in-out;
+		}
+
+		&:hover {
+			background: $colorMain;
+
+			.ico {
+				color: $lightColor;
+			}
+		}
+	}
+
+	&.btn-edit {
+		border: 1px solid $colorMain2;
+
+		.ico {
+			color: $colorMain2;
+		}
+
+		&:hover {
+			background: $colorMain2;
+		}
+	}
+
+	&.btn-save {
+		border: 1px solid $colorSuccess;
+
+		.ico {
+			color: $colorSuccess;
+		}
+
+		&:hover {
+			background: $colorSuccess;
+		}
+	}
+
+	&.btn-cancel {
+		border: 1px solid $darkgreyColor;
+
+		.ico {
+			color: $darkgreyColor;
+		}
+
+		&:hover {
+			background: $darkgreyColor;
+		}
+	}
+}
+.btn-toggle-filters {
+	width: 160px;
+	min-width: auto;
+	height: 60px;
+	border-radius: 8px;
+
+	span,
+	i {
+		margin-right: 15px;
+	}
+}
+
+.text-link {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+	font-weight: 500;
+	display: inline-block;
+	align-items: center;
+
+	&::after {
+		content: '';
+		display: inline-block;
+		height: 4px;
+		width: 10px;
+		-webkit-mask: url('/images/arrow-link.png') no-repeat center / cover;
+		background-color: $colorMain;
+		transform: translateY(-3px);
+		margin-left: 5px;
+		transition: background-color 0.3s ease-in-out;
+	}
+
+	&:hover::after {
+		background-color: $darkColor;
+	}
+}
+
+.pure-link {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		display: inline-block;
+		width: 100%;
+		height: 1px;
+		background-color: transparent;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&:hover {
+		&::before {
+			background-color: $colorMain;
+		}
+	}
+}
+
+.rs-btn-toolbar {
+	.rs-btn {
+		margin-left: 0 !important;
+	}
+}
+
+.rs-tooltip {
+	background-color: $lightColor;
+	border: 1px solid $borderColor;
+	padding: 20px;
+	color: $fontColor;
+
+	h6 {
+		margin-bottom: 10px;
+	}
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,29 @@
+.sourcer-page{
+  .sources-wrap .sources-content-wrap{
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .status{
+    margin-left: 20px;
+  }
+  .source-page-side-bar{
+    .hourly-rate{
+      display: flex;
+      &-wrap{
+        max-width: 33.333%;
+        flex-basis: 33.333%;
+        padding: 0 30px;
+        border-left: 1px solid $borderColor;
+        &:first-child{
+          border-left-width: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .skills{
+    ul{
+      list-style: none;
+    }
+  }
+}

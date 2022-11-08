@@ -1,0 +1,45 @@
+.trip-item {
+   background-color: $lightColor;
+   border: 1px solid $borderColor;
+
+   &.deactivated {
+      .content,
+      img {
+         opacity: .5;
+      }
+   }
+
+   .author {
+      margin: -55px 30px 30px 30px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 30px;
+      border-bottom: 1px solid $borderColor;
+
+      &-img {
+         flex-shrink: 0;
+         display: inline-flex;
+         border-radius: 50%;
+         overflow: hidden;
+         border: 5px solid $lightColor;
+         margin-right: 10px;
+      }
+
+      &-name {
+         overflow: hidden;
+
+         h6{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-bottom: 20px;
+         }
+      }
+   }
+
+   .content {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-bottom: 30px;
+   }
+}

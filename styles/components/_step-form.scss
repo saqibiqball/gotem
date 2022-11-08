@@ -1,0 +1,39 @@
+.step-form {
+	&-nav {
+		font-size: 24px;
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+
+		span {
+			flex-grow: 1;
+			justify-content: center;
+			display: inline-flex;
+			padding: 0 5px 20px 5px;
+			cursor: pointer;
+			color: $darkColor;
+			border-bottom: 1px solid $borderColor;
+			transition: all 0.3s ease-in-out;
+
+			&.active,
+			&:hover {
+				border-color: $colorMain;
+			}
+		}
+
+		@media (max-width: 575px) {
+			flex-direction: column;
+			align-items: center;
+
+			span {
+				&:not(:first-child) {
+					padding-top: 20px;
+				}
+			}
+		}
+	}
+
+	&-inputs {
+		margin-top: 60px;
+	}
+}

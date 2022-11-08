@@ -1,0 +1,49 @@
+.rs-pagination-group {
+	display: inline-flex;
+}
+
+.rs-pagination {
+	.rs-pagination-btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+		padding: 9px 5px;
+		min-width: 40px;
+		min-height: 40px;
+		border: none;
+		color: $lightColor;
+		border-radius: 0;
+		background-color: $colorMain;
+		margin-right: 8px;
+		margin-left: 0;
+		font-weight: 500;
+
+		&:focus {
+			box-shadow: unset;
+		}
+
+		&.rs-pagination-btn-active,
+		&:hover {
+			background-color: $darkgrey2Color;
+			color: $lightColor;
+		}
+
+		&.rs-pagination-btn-active {
+			border: unset;
+		}
+
+		&[aria-label="Previous"],
+		&[aria-label="Next"]{
+			font-size: 16px;
+			border: 1px solid $colorMain;
+			color: $darkColor;
+			background-color: transparent;
+
+			&:hover{
+				background-color: $colorMain;
+				color: $lightColor;
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.rs-modal-wrapper{
+  .rs-modal{
+    .rs-modal-dialog{
+      .rs-modal-content{
+        border-radius: 10px;
+        .rs-modal-header{
+          background: $darkgrey2Color;
+          padding: 20px;
+          min-height: 65px;
+          .rs-modal-header-close{
+            color: $lightColor;
+          }
+          .rs-modal-title{
+            color: $lightColor;
+            font-size: 20px;
+            font-weight: 700;
+          }
+        }
+        .rs-modal-footer{
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

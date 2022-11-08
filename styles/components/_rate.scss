@@ -1,0 +1,19 @@
+.rate{
+  .rate-count{
+    font-size: 12px;
+    margin-left: 12px;
+  }
+  .rs-rate{
+    margin-left: 0;
+    //color: $colorMain2;
+    &.rs-rate-xs {
+      font-size: 14px;
+
+      .rs-rate-character{
+        width: 14px;
+        height: 20px;
+        margin-right: 6px;
+      }
+    }
+  }
+}

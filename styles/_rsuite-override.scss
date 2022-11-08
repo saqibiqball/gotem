@@ -1,0 +1,96 @@
+.rs-drawer-backdrop {
+	background-color: $darkColor;
+
+	&.rs-anim-in {
+		opacity: 0.6;
+	}
+}
+
+.rs-loader-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+	.rs-loader {
+		.rs-loader-spin {
+			&:after {
+				border-color: $colorMain transparent transparent;
+			}
+		}
+	}
+}
+
+sup {
+	top: -0.4em;
+	font-size: 60%;
+}
+
+sub {
+	bottom: 0;
+	font-size: 45%;
+}
+
+label {
+	.rs-form-group {
+		margin-bottom: 0 !important;
+	}
+}
+
+.SRLProgressBar {
+	background-color: transparent !important;
+
+	& > * {
+		background-color: $colorMain !important;
+	}
+}
+
+.rs-badge {
+	&-independent {
+		background-color: $colorMain;
+		padding: 3px 5px;
+		border-radius: 3px;
+		line-height: 1;
+		font-size: 13px;
+	}
+}
+
+.rs-drawer-left.rs-drawer-xs,
+.rs-drawer-right.rs-drawer-xs {
+	@media (max-width: 575px) {
+		width: 90%;
+	}
+}
+
+.rs-dropdown-toggle-caret {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.rs-toast-container .rs-toast:not(.rs-notification) {
+	box-shadow: unset !important;
+}
+
+.rs-message {
+	border-radius: 0;
+	font-size: 16px;
+
+	.rs-message-body {
+		color: $darkColor;
+	}
+}
+
+.rs-message-container {
+	padding: 19px 30px;
+}
+
+.rs-message-success {
+	background-color: #a4d7b0;
+}
+
+.rs-message-info {
+	background-color: #a8d6ce;
+}
+
+.rs-dropdown .rs-btn>.rs-dropdown-toggle-icon.feather{
+	margin-right: 0;
+}

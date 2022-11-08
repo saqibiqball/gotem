@@ -1,0 +1,37 @@
+.icon-box {
+	display: flex;
+
+	
+	&.bordered{
+		@media (min-width: 1300px) {
+			padding: 50px 45px;
+		}
+		padding: 30px;
+	}
+
+	&-v-center {
+		align-items: center;
+	}
+
+	&__icon {
+		flex-shrink: 0;
+	}
+
+	&__body {
+		margin-left: 30px;
+		overflow: hidden;
+
+		span {
+			font-size: 14px;
+			font-weight: 500;
+		}
+
+		&.ellipsis {
+			h6 {
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+		}
+	}
+}

@@ -1,0 +1,303 @@
+@use 'sass:math';
+
+/*
+** Vertical margins and padding for sections and columns
+*/
+
+/* Vertical padding for sections
+.s - section
+pt-* - padding top value
+pb-* - padding bottom value
+py-* - same value for top and for bottom padding
+*/
+
+//setting value not on section but for child container for section with top and bottom borders with container width
+@each $value in $section-vertical-padding {
+	.s-pt-#{$value} > [class*='container'] {
+		padding-top: #{$value}px;
+	}
+}
+
+@each $value in $section-vertical-padding {
+	.s-pb-#{$value} > [class*='container'] {
+		padding-bottom: #{$value}px;
+	}
+}
+
+@each $value in $section-vertical-padding {
+	.s-py-#{$value} > [class*='container'] {
+		padding-top: #{$value}px;
+		padding-bottom: #{$value}px;
+	}
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		@each $value in $section-vertical-padding {
+			.s-pt-#{$breakpoint-abbr}-#{$value} > [class*='container'] {
+				padding-top: #{$value}px;
+			}
+		}
+
+		@each $value in $section-vertical-padding {
+			.s-pb-#{$breakpoint-abbr}-#{$value} > [class*='container'] {
+				padding-bottom: #{$value}px;
+			}
+		}
+
+		@each $value in $section-vertical-padding {
+			.s-py-#{$breakpoint-abbr}-#{$value} > [class*='container'] {
+				padding-top: #{$value}px;
+				padding-bottom: #{$value}px;
+			}
+		}
+	}
+}
+
+/*
+** Horizontal padding (gutters) for columns and rows
+*/
+
+/* columns
+.c - columns
+px-* - horizontal padding value
+*/
+
+@each $value in $columns-horizontal-gutters-sum {
+	@if ($value == 0) {
+	}
+	.c-gutter-#{$value} [class*='col-'],
+	.row.c-gutter-#{$value} > [class*='col-'] {
+		//even gutter value
+		@if ($value % 2 == 0) {
+			padding-right: #{math.div($value, 2)}px;
+			padding-left: #{math.div($value, 2)}px;
+		}
+			//odd gutter value
+		@else {
+			padding-right: #{math.div($value + 1, 2)}px;
+			padding-left: #{math.div($value + 1, 2)}px;
+		}
+	}
+}
+
+/* rows */
+@each $value in $columns-horizontal-gutters-sum {
+	.c-gutter-#{$value} .row,
+		//adding div tag selector for higher priority for setting classes on rows. For nested rows
+	div.row.c-gutter-#{$value} {
+		//even gutter valuels ms
+		@if ($value % 2 == 0) {
+			margin-left: #{(0 - math.div($value, 2))}px;
+			margin-right: #{0 - math.div($value, 2)}px;
+		}
+			//odd gutter value
+		@else {
+			margin-left: #{(math.div(0 - $value + 1, 2) - 1)}px;
+			margin-right: #{math.div(0 - $value + 1, 2)}px;
+		}
+	}
+}
+
+/* Vertical margins for columns in sections and rows
+.c - columns
+mt-* - margin top value
+mb-* - margin bottom value
+my-* - same value for top and for bottom margin
+*/
+@each $value in $columns-vertical-margins {
+	.c-mt-#{$value} [class*='col-'],
+	.row.c-mt-#{$value} > [class*='col-'] {
+		margin-top: #{$value}px;
+	}
+}
+
+@each $value in $columns-vertical-margins {
+	.c-mb-#{$value} [class*='col-'],
+	.row.c-mb-#{$value} > [class*='col-'] {
+		margin-bottom: #{$value}px;
+
+		&.mb-0{
+			margin-bottom: 0;
+		}
+	}
+	.c-mb-#{$value} .row {
+		margin-bottom: -#{$value}px;
+	}
+}
+
+@each $value in $columns-vertical-margins {
+	.row.c-mb-#{$value} {
+		margin-bottom: -#{$value}px;
+	}
+}
+
+@each $value in $columns-vertical-margins {
+	.c-my-#{$value} [class*='col-'],
+	.row.c-my-#{$value} > [class*='col-'] {
+		margin-top: #{$value}px;
+		margin-bottom: #{$value}px;
+	}
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		@each $value in $columns-vertical-margins {
+			.c-mt-#{$breakpoint-abbr}-#{$value} [class*='col-'],
+			.row.c-mt-#{$breakpoint-abbr}-#{$value} > [class*='col-'] {
+				margin-top: #{$value}px;
+			}
+		}
+
+		@each $value in $columns-vertical-margins {
+			.c-mb-#{$breakpoint-abbr}-#{$value} [class*='col-'],
+			.row.c-mb-#{$breakpoint-abbr}-#{$value} > [class*='col-'] {
+				margin-bottom: #{$value}px;
+			}
+		}
+
+		@each $value in $columns-vertical-margins {
+			.c-my-#{$breakpoint-abbr}-#{$value} [class*='col-'],
+			.row.c-my-#{$breakpoint-abbr}-#{$value} > [class*='col-'] {
+				margin-top: #{$value}px;
+				margin-bottom: #{$value}px;
+			}
+		}
+	}
+}
+
+/*
+** Helper Spacer Divider
+*/
+@each $value in $dividers-height {
+	.divider-#{$value} {
+		margin-top: #{$value}px;
+	}
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		@each $value in $dividers-height {
+			.divider-#{$breakpoint-abbr}-#{$value} {
+				margin-top: #{$value}px;
+			}
+		}
+	}
+}
+
+@each $value in $spacing-values {
+	.pt-#{$value} {
+		padding-top: #{$value}px;
+	}
+	.pb-#{$value} {
+		padding-bottom: #{$value}px;
+	}
+	.pl-#{$value} {
+		padding-left: #{$value}px;
+	}
+	.pr-#{$value} {
+		padding-right: #{$value}px;
+	}
+	.p-#{$value} {
+		padding: #{$value}px;
+	}
+	.px-#{$value} {
+		padding-right: #{$value}px;
+		padding-left: #{$value}px;
+	}
+	.py-#{$value} {
+		padding-top: #{$value}px;
+		padding-bottom: #{$value}px;
+	}
+
+	/*margins*/
+	.mt-#{$value} {
+		margin-top: #{$value}px;
+	}
+	.mb-#{$value} {
+		margin-bottom: #{$value}px;
+	}
+	.ml-#{$value} {
+		margin-left: #{$value}px;
+	}
+	.mr-#{$value} {
+		margin-right: #{$value}px;
+	}
+	.m-#{$value} {
+		margin: #{$value}px;
+	}
+	.mx-#{$value} {
+		margin-right: #{$value}px;
+		margin-left: #{$value}px;
+	}
+	.my-#{$value} {
+		margin-top: #{$value}px;
+		margin-bottom: #{$value}px;
+	}
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		@each $value in $spacing-values {
+			/* paddings */
+			.pt-#{$breakpoint-abbr}-#{$value} {
+				padding-top: #{$value}px;
+			}
+			.pb-#{$breakpoint-abbr}-#{$value} {
+				padding-bottom: #{$value}px;
+			}
+			.pl-#{$breakpoint-abbr}-#{$value} {
+				padding-left: #{$value}px;
+			}
+			.pr-#{$breakpoint-abbr}-#{$value} {
+				padding-right: #{$value}px;
+			}
+			.p-#{$breakpoint-abbr}-#{$value} {
+				padding: #{$value}px;
+			}
+			.px-#{$breakpoint-abbr}-#{$value} {
+				padding-right: #{$value}px;
+				padding-left: #{$value}px;
+			}
+			.py-#{$breakpoint-abbr}-#{$value} {
+				padding-top: #{$value}px;
+				padding-bottom: #{$value}px;
+			}
+
+			/*margins*/
+			.mt-#{$breakpoint-abbr}-#{$value} {
+				margin-top: #{$value}px;
+			}
+			.mb-#{$breakpoint-abbr}-#{$value} {
+				margin-bottom: #{$value}px;
+			}
+			.ml-#{$breakpoint-abbr}-#{$value} {
+				margin-left: #{$value}px;
+			}
+			.mr-#{$breakpoint-abbr}-#{$value} {
+				margin-right: #{$value}px;
+			}
+			.m-#{$breakpoint-abbr}-#{$value} {
+				margin: #{$value}px;
+			}
+			.mx-#{$breakpoint-abbr}-#{$value} {
+				margin-right: #{$value}px;
+				margin-left: #{$value}px;
+			}
+			.my-#{$breakpoint-abbr}-#{$value} {
+				margin-top: #{$value}px;
+				margin-bottom: #{$value}px;
+			}
+		}
+	}
+}
+
+//@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+//	@media (min-width: #{$breakpoint-value}) {
+//		@each $value in $order-values {
+//			.order-#{$breakpoint-abbr}-#{$value} {
+//				order: #{$value};
+//			}
+//		}
+//	}
+//}

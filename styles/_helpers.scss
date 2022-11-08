@@ -1,0 +1,363 @@
+@import 'helpers/helpers_spacing';
+@import 'helpers/helpers_layouts';
+@import 'helpers/helpers_colors';
+
+.feather {
+	color: $darkColor;
+	transition: all 0.3s ease-in-out;
+
+	&.color-main {
+		color: $colorMain;
+	}
+	&.color-main2 {
+		color: $colorMain2;
+	}
+	&.color-font {
+		color: $fontColor;
+	}
+}
+
+.fs-90 {
+	@media (max-width: 1199px) {
+		font-size: 60px;
+	}
+	@media (max-width: 991px) {
+		font-size: 50px;
+	}
+}
+
+.d-none {
+	display: none;
+}
+
+.d-lg-none {
+	@media (min-width: 991px) {
+		display: none;
+	}
+}
+
+.d-grid {
+	display: grid;
+}
+
+.d-inline-block {
+	display: inline-block;
+}
+
+.d-lg-block {
+	@media (min-width: 991px) {
+		display: block;
+	}
+}
+
+.d-block {
+	display: block;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-wrap {
+	flex-wrap: wrap;
+}
+
+.f-grow {
+	flex-grow: 1;
+}
+
+.d-in-flex {
+	display: inline-flex;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.align-start {
+	align-items: start;
+}
+
+.align-end {
+	align-items: end;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.justify-content-end {
+	justify-content: flex-end;
+}
+
+.justify-content-start {
+	justify-content: flex-start;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		.align-#{$breakpoint-abbr}-center {
+			align-items: center;
+		}
+
+		.align-#{$breakpoint-abbr}-start {
+			align-items: start;
+		}
+
+		.align-#{$breakpoint-abbr}-end {
+			align-items: end;
+		}
+
+		.justify-content-#{$breakpoint-abbr}-center {
+			justify-content: center;
+		}
+
+		.justify-content-#{$breakpoint-abbr}-end {
+			justify-content: flex-end;
+		}
+
+		.justify-content-#{$breakpoint-abbr}-start {
+			justify-content: flex-start;
+		}
+
+		.justify-content-#{$breakpoint-abbr}-between {
+			justify-content: space-between;
+		}
+	}
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.d-shrink {
+	flex-shrink: 0;
+}
+
+.no-wrap{
+	white-space: nowrap;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.h-100 {
+  min-height: calc(100vh - 65px);
+}
+
+.col-h-100 {
+	@media (min-width: 1200px) {
+		min-height: calc(100vh - 65px);
+	}
+}
+
+.max-height-100{
+	@media (min-width: 1200px) {
+		overflow: auto;
+		max-height: calc(100vh - 65px);
+	}
+}
+
+.m-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+.mr-auto {
+	margin-right: auto;
+}
+
+.border-right{
+	border-right: 1px solid $borderColor;
+}
+
+.text-center {
+	text-align: center;
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		.text-#{$breakpoint-abbr}-right {
+			text-align: right;
+		}
+		.text-#{$breakpoint-abbr}-left {
+			text-align: left;
+		}
+	}
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		.border-#{$breakpoint-abbr}-right {
+			border-right: 1px solid $borderColor;
+		}
+		.border-#{$breakpoint-abbr}-left {
+			border-left: 1px solid $borderColor;
+		}
+	}
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-end {
+	text-align: right;
+}
+
+.underline {
+	text-decoration: underline !important;
+
+	&:hover {
+		color: inherit;
+		text-decoration: underline !important;
+		opacity: 0.8;
+	}
+}
+
+.underline-none {
+	text-decoration: none !important;
+}
+
+.shadow {
+	box-shadow: $boxShadow;
+}
+
+.ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.p-relative {
+	position: relative;
+}
+
+.rounded{
+  border-radius: 4px;
+}
+
+.text-with-br {
+	white-space: pre-line;
+}
+
+.col-left-lg-bordered {
+	@media (min-width: 991px) {
+		border-left: 1px solid $borderColor;
+	}
+	@media (max-width: 990px) {
+		border-top: 1px solid $borderColor;
+	}
+
+	&.xl-border-none {
+		@media (max-width: 1199px) {
+			border-top: none;
+			border-left: none;
+		}
+	}
+
+	&.lg-border-none {
+		@media (max-width: 990px) {
+			border-top: none;
+		}
+	}
+}
+
+.img-fit {
+	position: relative;
+
+	img {
+		object-fit: cover;
+	}
+}
+
+.bg-cover {
+	background-size: cover;
+}
+
+.img-original-size {
+	img {
+		width: auto !important;
+		height: auto !important;
+		min-width: auto !important;
+		min-height: auto !important;
+	}
+}
+
+.img-with-border {
+	.rs-uploader-trigger {
+		border: 1px solid $borderColor;
+		border-radius: 5px;
+	}
+}
+
+.img-with-custom-border {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 10px;
+		bottom: 10px;
+		border: 2px solid $darkColor;
+		opacity: 0.1;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+	}
+
+	&.layout-2::before {
+		left: -10px;
+		bottom: -10px;
+	}
+}
+
+.lh-1 {
+	line-height: 1;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.parallax {
+	background-attachment: fixed;
+}
+
+.bg-auth {
+	background-image: url('/images/bg-auth.png');
+	background-position: center;
+	background-size: cover;
+}
+
+.status{
+	padding: 5px 8px;
+	border-radius: 4px;
+	background-color: #FCD200;
+	text-transform: capitalize;
+	font-weight: 500;
+	color: $darkColor;
+	font-size: 12px;
+	margin: 5px;
+	white-space: nowrap;
+
+	&.active {
+		background-color: #CDE569;
+	}
+	&.reject {
+		background-color: #E46B2D;
+	}
+}

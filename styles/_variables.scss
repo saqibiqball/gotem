@@ -1,0 +1,46 @@
+$fontColor: #565853;
+$lightColor: #ffffff;
+$lightFontColor: #b2b8c9;
+$darkgreyColor: #7C7C7C;
+$greyColor: #F7F7F7;
+$darkColor: #31342B;
+$darkgrey2Color: #4F5467;
+$borderColor: #E5E6E7;
+$borderColorDark: #D1D5DB;
+
+$colorBtn: #f666;
+$colorMain: #8D99FF;
+$colorMain2: #E46B2D;
+$colorMain3: #F8CF2C;
+$colorSuccess: #1c9b38;
+$colorWarning: #f0ad00;
+$colorDanger: #e10c19;
+
+//Variables For Grid
+$columns: 12;
+
+$boxShadow: 0 2px 5px rgba(#000000, 0.05);
+
+$container-max-widths: (
+	576px: 540px,
+	768px: 720px,
+	992px: 960px,
+	1200px: 1504px,
+) !default;
+
+$grid-breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1800px,
+) !default;
+
+//font size helpers - fs-xx
+$font-size-helpers: 12 14 16 18 20 22 24 26 28 30 32 36 40 48 56 60 70 80 90;
+$dividers-height: 0 10 20 30 35 40 50 60 80 90 100 120 130 140 150;
+$section-vertical-padding: 0 1 2 3 5 10 15 20 25 30 35 40 45 50 55 60 65 70 80 90 100 110 115 120
+	130 140 150 250 270	;
+$columns-vertical-margins: 10 15 16 20 25 30 40 50 60 0;
+$columns-horizontal-gutters-sum: 80 60 40 20 16 15 10 5 2 1 0;
+$spacing-values: 0 5 10 15 20 25 30 32 35 40 45 50 55 60 65 70 90 95 100;

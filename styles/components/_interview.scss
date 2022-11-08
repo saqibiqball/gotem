@@ -1,0 +1,84 @@
+.interview {
+	&-wrap {
+	}
+
+	&-item {
+		display: flex;
+		font-size: 16px;
+		flex-wrap: wrap;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid $borderColor;
+		}
+	}
+
+	&-question {
+		width: 58%;
+		font-weight: 400;
+		color: $darkColor;
+		padding-right: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		@media (min-width: 1200px) {
+			//padding-left: 16%;
+		}
+
+		&.full {
+			padding-left: 20px;
+			width: auto;
+			margin-right: auto;
+		}
+	}
+
+	&-answer {
+		width: 42%;
+
+		textarea {
+			border: none;
+			padding: 7px 0 0 0;
+			color: $colorMain;
+			font-size: 16px;
+			font-weight: 500;
+
+			&:active,
+			&:focus {
+				border: none;
+				outline: none;
+			}
+		}
+	}
+	&-btn {
+		width: 100px;
+	}
+
+	@media (max-width: 576px) {
+		&-question,
+		&-answer {
+			width: 100%;
+		}
+	}
+
+	&-layout2 {
+		.interview {
+			&-question {
+				@media (min-width: 577px) {
+					width: 50%;
+					text-align: right;
+					padding: 13px 20px;
+				}
+			}
+
+			&-answer {
+				color: $colorMain;
+				font-weight: 500;
+				padding-bottom: 10px;
+
+				@media (min-width: 577px) {
+					width: 50%;
+					padding: 13px 20px;
+				}
+			}
+		}
+	}
+}

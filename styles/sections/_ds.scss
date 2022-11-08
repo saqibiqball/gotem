@@ -1,0 +1,32 @@
+.ds {
+	background-color: $darkColor;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $lightColor;
+	}
+
+	a {
+		color: $lightColor;
+
+		&:hover {
+			color: $colorMain;
+		}
+	}
+
+	&.ms {
+		background-color: $darkgreyColor;
+	}
+
+	.pure-link {
+		color: $fontColor;
+
+		&:hover {
+			color: $lightColor;
+		}
+	}
+}

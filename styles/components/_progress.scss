@@ -1,0 +1,23 @@
+.progress-bar{
+  p{
+    margin-top: 10px;
+  }
+  .rs-progress-line{
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 0;
+    .rs-progress-info{
+      padding-left: 0;
+      font-weight: 700;
+      height: auto;
+      flex-basis: auto;
+      margin-bottom: 10px;
+    }
+    .rs-progress-line-outer{
+      width: 100%;
+    }
+  }
+  & + & {
+    margin-top: 20px;
+  }
+}

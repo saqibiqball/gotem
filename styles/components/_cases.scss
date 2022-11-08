@@ -1,0 +1,64 @@
+.case-item {
+	position: relative;
+
+	.badge {
+		display: inline-block;
+		padding: 6px 8px;
+		font-size: 12px;
+		line-height: 1;
+		color: $lightColor;
+		background-color: $colorMain2;
+		text-transform: capitalize;
+	}
+
+	.content {
+		padding: 24px 32px;
+
+		& + .content {
+			border-top: 1px solid $borderColor;
+		}
+	}
+
+	.author {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		&-content{
+
+		}
+	}
+
+	.image {
+		margin-right: 16px;
+		@media (max-width: 575px) {
+			margin-bottom: 16px;
+		}
+
+		span {
+			border-radius: 50%;
+			overflow: hidden;
+		}
+	}
+
+	.case-list {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin-top: -8px;
+		margin-bottom: -8px;
+
+		& > li {
+			padding-top: 8px;
+			padding-bottom: 8px;
+
+			&:not(:last-child) {
+				margin-right: 18px;
+			}
+		}
+
+		.ico {
+			color: $darkColor;
+		}
+	}
+}

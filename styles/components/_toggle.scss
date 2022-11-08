@@ -1,0 +1,34 @@
+.toggle{
+  .rs-toggle {
+    & + label{
+      margin-left: 8px;
+      font-size: 14px;
+    }
+    &.rs-toggle-md{
+      &.rs-toggle-checked{
+        .rs-toggle-presentation{
+          background: transparent;
+          &:after{
+            background: $colorMain2;
+            margin-left: -15px;
+          }
+        }
+      }
+      .rs-toggle-presentation{
+        height: 16px;
+        min-width: 32px;
+        background-color: transparent;
+        border: 1px solid $borderColor;
+        &:after{
+          background: $darkgreyColor;
+          width: 12px;
+          height: 12px;
+          top: 1px;
+        }
+      }
+      .rs-toggle-inner{
+        height: 16px;
+      }
+    }
+  }
+}

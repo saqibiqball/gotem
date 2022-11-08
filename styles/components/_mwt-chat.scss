@@ -1,0 +1,256 @@
+.mwt-chat {
+	display: flex;
+	position: relative;
+	overflow: hidden;
+
+	&-sidebar{
+		flex-basis: 30%;
+		max-width: 30%;
+		margin-right: 32px;
+
+		&.active{
+			right: 0;
+		}
+
+		@media(max-width: 1600px){
+			flex-basis: 40%;
+			max-width: 40%;
+			margin-right: 15px;
+		}
+
+
+		@media(max-width: 1199px){
+			position: absolute;
+			top: 0;
+			//left: 0;
+			right: 100%;
+			bottom: 0;
+			flex-basis: unset;
+			max-width: unset;
+			width: 100%;
+			margin-right: 0;
+			transition: right 0.3s ease-in-out;
+			background: $lightColor;
+			z-index: 10;
+			padding: 15px;
+			border: 1px solid $borderColor;
+		}
+
+		&-filter{
+			margin-bottom: 32px;
+		}
+
+		&-users-list {
+			max-height: 644px;
+			overflow-y: auto;
+		}
+
+		.mwt-chat-user-item{
+			padding: 24px 30px;
+			background-color: $lightColor;
+			border: 1px solid $borderColor;
+
+			@media(max-width: 1400px){
+				padding: 15px;
+			}
+
+			&:not(:last-child){
+				margin-bottom: 4px;
+			}
+		}
+
+		&__toogle.rs-btn{
+			position: absolute;
+			right: 0;
+			top: 70px;
+			transform: translateX(100%);
+			padding: 15px;
+			background: $colorMain;
+			color: $lightColor;
+			min-width: auto;
+		}
+	}
+
+	&-main{
+		flex-basis: 70%;
+		max-width: 70%;
+		background-color: $lightColor;
+		border: 1px solid $borderColor;
+
+		@media(max-width: 1600px){
+			flex-basis: 60%;
+			max-width: 60%;
+		}
+
+		@media(max-width: 1199px){
+			flex-basis: 100%;
+			max-width: 100%;
+		}
+
+		&-header{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 6px 32px;
+			border-bottom: 1px solid $borderColor;
+
+			@media(max-width: 1400px){
+				padding: 6px 15px;
+			}
+		}
+
+		&-content{
+			padding: 32px;
+			height: 816px;
+			overflow-y: auto;
+
+			@media(max-width: 1400px){
+				padding: 15px;
+				height: 644px;
+			}
+
+			.mwt-chat-user-item{
+				padding-right: 72px;
+				align-items: flex-start;
+
+				@media(max-width: 574px){
+					padding-right: 56px;
+					&__media{
+						width: 40px;
+
+					}
+				}
+
+				&__title{
+					justify-content: flex-start;
+					h6 {
+						color: $fontColor;
+						margin-right: 8px;
+					}
+				}
+
+				&__text{
+					background-color: $greyColor;
+					padding: 3px 12px;
+					p{
+						margin-bottom: 0;
+					}
+				}
+
+				&:not(:last-child) {
+					margin-bottom: 24px;
+				}
+
+				&.own{
+					padding-left: 72px;
+					padding-right: 0;
+					@media(max-width: 574px){
+						padding-left: 56px;
+					}
+
+					.mwt-chat-user-item{
+						&__text{
+							background-color: rgba($colorSuccess, 20%);
+						}
+					}
+				}
+			}
+		}
+
+		&-form{
+			padding: 32px;
+			position: relative;
+
+			@media(max-width: 1400px){
+				padding: 15px;
+			}
+
+			.custom-picker{
+				position: absolute;
+				left: 32px;
+				bottom: calc(100% - 32px);
+				z-index: 10;
+
+				@media(max-width: 1400px){
+					left: 15px;
+					bottom: calc(100% - 15px);
+				}
+			}
+
+			.rs-form-group{
+				margin-bottom: 0!important;
+				flex-grow: 1;
+			}
+		}
+	}
+
+	&-user-item{
+		display: flex;
+		align-items: center;
+
+		&__media{
+			position: relative;
+			flex-shrink: 0;
+			display: flex;
+			margin-right: 16px;
+
+			img{
+				border-radius: 50%;
+			}
+		}
+
+		&__status{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			display: inline-block;
+			width: 13px;
+			height: 13px;
+			border-radius: 50%;
+			border: 1px solid $lightColor;
+			background-color: $colorMain2;
+
+			&.active {
+				background-color: $colorSuccess;
+			}
+		}
+
+		&__content{
+			flex-grow: 1;
+		}
+
+		&__title{
+			display: flex;
+			justify-content: space-between;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1.75rem;
+
+			h6{
+				font-size: inherit;
+				font-weight: inherit;
+				line-height: inherit;
+				margin-bottom: 0;
+			}
+		}
+
+		&__text{
+			font-size: 14px;
+		}
+
+		&.own{
+			flex-direction: row-reverse;
+
+			.mwt-chat-user-item{
+				&__media{
+					margin-right: 0;
+					margin-left: 16px;
+				}
+
+				&__title{
+					justify-content: flex-end;
+				}
+			}
+		}
+	}
+}

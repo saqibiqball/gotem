@@ -1,0 +1,59 @@
+.quote{
+	border: 1px solid $borderColor;
+	background: $greyColor;
+	padding: 30px;
+	@media(min-width: 575px) {
+		padding: 50px 130px;
+	}
+	margin-top: 110px;
+	.quote-wrap{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		.quote-image{
+			background: $greyColor;
+			padding: 20px;
+			border-radius: 50%;
+			margin-top: -165px;
+			& > span {
+				border-radius: 50%;
+				overflow: hidden;
+			}
+		}
+		.quote-content{
+			text-align: center;
+			margin-top: 25px;
+			p{
+				color: $darkColor;
+				font-size: 20px;
+				line-height: 1.6;
+				margin-bottom: 30px;
+			}
+			span{
+				letter-spacing: 3px;
+			}
+		}
+	}
+}
+
+.quote-section{
+	@media(min-width: 575px){
+		.alice-carousel__prev-btn{
+			position: absolute;
+			top: 59%;
+			width: 105px;
+			left: 0;
+			cursor: pointer;
+		}
+		.alice-carousel__next-btn{
+			position: absolute;
+			top: 59%;
+			width: 105px;
+			right: 0;
+			cursor: pointer;
+		}
+	}
+	
+}

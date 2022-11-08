@@ -1,0 +1,190 @@
+.mwt-chat-group {
+	position: absolute;
+	top: 10px;
+	right: 68px;
+	z-index: 50;
+	background: $lightColor;
+	border-left: 1px solid $greyColor;
+	max-height: calc(100% - 20px);
+
+	& > * {
+		max-width: 352px;
+		width: 100%;
+
+		@media (max-width: 424px) {
+			max-width: 300px;
+		}
+	}
+
+	&-toggle {
+		button.rs-btn {
+			color: $darkColor;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: $lightColor;
+			padding: 5px;
+			width: 40px;
+			height: 40px;
+			min-width: auto;
+			font-size: 24px;
+			border: 1px solid $borderColor
+		}
+	}
+
+	&-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px 32px;
+		border-bottom: 1px solid $borderColor;
+
+		.mwt-chat-group-toggle {
+			button.rs-btn {
+				padding: 0;
+				border: 0;
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		h6 {
+			font-size: 16px;
+			margin-bottom: 0;
+			line-height: 1;
+			display: inline-flex;
+			align-items: center;
+		}
+	}
+
+	&-content {
+		min-width: 280px;
+		padding: 32px 32px 0 32px;
+		height: calc(100vh - 350px);
+		overflow-y: auto;
+	}
+
+	&-form {
+		padding: 16px;
+		background: $greyColor;
+		border: 1px solid $borderColor;
+		position: relative;
+
+		.custom-picker {
+			position: absolute;
+			left: 0;
+			bottom: 100%;
+		}
+
+		.rs-input-group-addon:hover{
+			background-color: transparent !important;
+			color: $colorMain !important;
+		}
+
+		form{
+			width: 100%;
+		}
+
+		.rs-input {
+			background: transparent;
+			border-top: 0 !important;
+			border-right: 0 !important;
+			border-left: 0 !important;
+			resize: none;
+		}
+
+		.btn-icon{
+			position: absolute;
+			top: 10px;
+			right: 20px;
+		}
+		.rs-form:not(.rs-form-inline) .rs-form-group:not(:last-child){
+			margin-bottom: 0;
+		}
+	}
+
+	&-user-item {
+		display: flex;
+		align-items: flex-start;
+		padding-bottom: 24px;
+
+		//& + & {
+		//	margin-top: 24px;
+		//}
+
+		&__media {
+			position: relative;
+			flex-shrink: 0;
+			display: flex;
+			margin-right: 16px;
+
+			img {
+				border-radius: 50%;
+			}
+		}
+
+		&__status {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			display: inline-block;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			border: 1px solid $lightColor;
+			background-color: $colorMain2;
+
+			&.active {
+				background-color: $colorSuccess;
+			}
+		}
+
+		&__content {
+			flex-grow: 1;
+
+		}
+
+		&__title {
+			display: flex;
+			justify-content: space-between;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1.75rem;
+
+			h6 {
+				font-size: inherit;
+				font-weight: inherit;
+				line-height: inherit;
+				margin-bottom: 0;
+			}
+		}
+
+		&__text {
+			font-size: 14px;
+			color: $darkColor;
+			p{
+				word-break: break-all;
+			}
+			span {
+				margin-right: 5px;
+				color: $fontColor;
+			}
+		}
+
+		&.own {
+			flex-direction: row-reverse;
+
+			.mwt-chat-user-item {
+				&__media {
+					margin-right: 0;
+					margin-left: 16px;
+				}
+
+				&__title {
+					justify-content: flex-end;
+				}
+			}
+		}
+	}
+}
+

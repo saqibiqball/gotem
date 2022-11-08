@@ -1,0 +1,81 @@
+.links-colorMain {
+	color: $colorMain;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		color: $darkColor;
+	}
+}
+
+.links-colorMain2:not(:hover) {
+	color: $colorMain2;
+}
+
+.links-darkColor {
+	color: $darkColor;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		color: $colorMain;
+	}
+}
+
+.links-dangerColor {
+	color: $colorDanger;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		color: $darkColor;
+	}
+}
+
+.links-lightFontColor:not(:hover) {
+	color: $lightFontColor;
+}
+
+.color-main {
+	color: $colorMain;
+}
+
+.color-main2 {
+	color: $colorMain2;
+}
+
+.color-lightFontColor {
+	color: $lightFontColor;
+}
+
+.color-darkColor {
+	color: $darkColor;
+}
+
+.color-darkGreyColor {
+	color: $darkgreyColor;
+}
+
+.color-dangerColor {
+	color: $colorDanger;
+}
+
+.color-successColor {
+	color: $colorSuccess;
+}
+
+.hero-bg {
+	background-color: rgba($borderColorDark, 0.1);
+}
+
+.bg-colorMain{
+	background-color: $colorMain;
+	color: $lightColor;
+}
+
+.bg-colorMain2{
+	background-color: $colorMain2;
+	color: $lightColor;
+}
+
+.bg-greyColor{
+	background-color: $greyColor;
+	color: $darkColor;
+}

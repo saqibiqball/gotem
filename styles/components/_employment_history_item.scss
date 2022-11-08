@@ -1,0 +1,7 @@
+.employment-history-item{
+  padding-bottom: 30px;
+  border-bottom: 1px solid $borderColor;
+  & + &{
+    margin-top: 30px;
+  }
+}

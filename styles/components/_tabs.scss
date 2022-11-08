@@ -1,0 +1,265 @@
+.rs-nav-tabs,
+.rs-sidenav {
+	&.rs-nav-horizontal {
+		display: flex;
+		@media (min-width: 768px) {
+			margin-top: -30px;
+		}
+
+		@media (max-width: 1200px) {
+			flex-wrap: wrap;
+		}
+
+		.rs-nav-bar {
+			border-color: $borderColor;
+		}
+
+		.rs-nav-waterline {
+			border-top: 3px solid $colorMain;
+		}
+
+		.rs-nav-item {
+			vertical-align: bottom;
+			font-size: 16px;
+			font-weight: 400;
+			color: $darkColor;
+			transition: all 0.3s ease-in-out;
+			padding: 30px;
+			border-bottom: 1px solid transparent;
+
+			@media (min-width: 1199px) {
+				&:first-child {
+					padding-left: 0;
+				}
+			}
+
+			.rs-ripple-pond {
+				display: none;
+			}
+
+			@media (min-width: 1200px) {
+				position: relative;
+
+				&:not(:first-child) {
+					&::before {
+						content: '';
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						left: 0;
+						display: inline-block;
+						width: 1px;
+						height: 30px;
+						background-color: $borderColor;
+					}
+				}
+			}
+
+			&:hover,
+			&.rs-nav-item-active {
+				background-color: transparent;
+				border: {
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 1px solid $colorMain;
+				}
+			}
+		}
+
+		@media (max-width: 1199px) {
+			.rs-nav-item {
+				padding: 20px;
+			}
+		}
+
+		@media (max-width: 767px) {
+			flex-direction: column;
+
+			.rs-nav-item {
+				padding: 10px 0;
+			}
+		}
+
+		&.horizontal-layout-2 {
+		}
+	}
+
+	&.rs-nav-vertical {
+		.rs-nav-waterline {
+			display: none;
+		}
+
+		.rs-nav-item,
+		.rs-dropdown-toggle,
+		.rs-dropdown-item,
+		.rs-sidenav-item {
+			border-radius: 0 !important;
+			padding: 14px 0;
+			font-size: 16px;
+			text-transform: capitalize;
+			letter-spacing: normal;
+			line-height: 1;
+			font-weight: 400;
+			color: $darkColor;
+			background: $lightColor !important;
+
+			.rs-ripple-pond {
+				display: none;
+			}
+
+			i {
+				margin-right: 20px;
+			}
+
+			&:not(:first-child) {
+				margin-top: 0;
+			}
+
+			&:not(.rs-nav-item-active):not(.rs-nav-item-disabled) {
+				&:hover {
+					color: $colorMain;
+				}
+			}
+
+			&.rs-nav-item-active,
+			&.rs-sidenav-item-active,
+			&.rs-dropdown-item-active {
+				color: $colorMain;
+			}
+		}
+
+		.rs-dropdown-item {
+			padding-left: 30px;
+		}
+	}
+
+}
+
+.rs-nav-default {
+	display: flex;
+
+	&.wrap {
+		//@media (max-width: 1199px) {
+		//	flex-direction: column;
+		//
+		//	.rs-nav-item {
+		//		width: 100%;
+		//		text-align: center;
+		//		border-left: 1px solid $borderColor;
+		//		border-right: 1px solid $borderColor;
+		//	}
+		//}
+	}
+
+	@media (max-width: 767px) {
+		flex-direction: column;
+	}
+
+	.rs-nav-item {
+		border-radius: 0;
+		position: relative;
+		padding: 8px 30px;
+		border-top: 1px solid $borderColor;
+		border-bottom: 1px solid $borderColor;
+		background-color: $lightColor;
+		transition: all 0.3s ease-in-out;
+
+		@media (min-width: 768px) {
+			&:first-child {
+				border-left: 1px solid $borderColor;
+			}
+			&:last-of-type {
+				border-right: 1px solid $borderColor;
+			}
+		}
+
+		@media (max-width: 767px) {
+			width: 100%;
+			text-align: center;
+			border-left: 1px solid $borderColor;
+			border-right: 1px solid $borderColor;
+		}
+
+		&.rs-nav-item-active,
+		&:hover {
+			color: $lightColor;
+			background-color: $colorMain;
+			border-color: $colorMain !important;
+		}
+	}
+}
+
+.gallery-tabs {
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+	ul {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 991px) {
+			flex-direction: column;
+		}
+
+		.rs-nav-item {
+			width: 48%;
+			@media (max-width: 991px) {
+				width: 100%;
+				& + .rs-nav-item {
+					margin-top: 20px;
+				}
+			}
+
+			&.rs-nav-item-active {
+				.rs-nav-item-content {
+					border-color: $colorMain;
+
+					h4 {
+						color: $colorMain;
+					}
+				}
+			}
+
+			.rs-nav-item-content {
+				padding: 15px;
+				border-radius: 5px;
+				border: 2px solid $borderColor;
+
+				span {
+					color: $fontColor;
+				}
+			}
+		}
+	}
+}
+
+.rs-nav {
+	&.rs-nav-horizontal {
+		display: flex;
+		flex-wrap: wrap;
+
+		&.rs-nav-subtle {
+			.rs-nav-item {
+				color: $darkColor;
+				padding: 5px 0;
+
+				&:not(:last-child) {
+					margin-right: 30px;
+				}
+
+				&.rs-nav-item-active,
+				&:hover {
+					color: $colorMain;
+
+					&:before {
+						background-color: $colorMain;
+					}
+				}
+
+				.rs-ripple-pond {
+					display: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+.custom-loader {
+	text-align: center;
+	transform-style: flat;
+	padding: 30px 15px;
+
+	& > span:first-child {
+		height: 80px;
+		animation: coin-rotate 2s infinite;
+	}
+}
+
+@keyframes coin-rotate {
+	0% {
+		transform: rotateY(0);
+	}
+
+	50% {
+		transform: rotateY(180deg);
+	}
+
+	100% {
+		transform: rotateY(360deg);
+	}
+}

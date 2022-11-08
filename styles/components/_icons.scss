@@ -1,0 +1,47 @@
+.soc-icons {
+	a:not(:last-child) {
+		margin-right: 10px;
+	}
+}
+
+a,
+span {
+	&.rounded-icon {
+		width: 50px;
+		height: 50px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	&.border-icon {
+		border: 1px solid $borderColor;
+		color: $darkgreyColor;
+	}
+}
+
+a {
+	&.border-icon {
+		&:hover {
+			background-color: $colorMain;
+			border-color: $colorMain;
+
+			svg {
+				color: $lightColor;
+			}
+		}
+	}
+}
+
+.ds {
+	a {
+		&.border-icon {
+			border-color: rgba($lightColor, 0.1);
+			svg {
+				color: $lightColor;
+			}
+		}
+	}
+}

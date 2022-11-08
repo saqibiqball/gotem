@@ -1,0 +1,159 @@
+.p-big {
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.p-normal {
+	padding: 40px 45px;
+}
+
+.p-small {
+	padding: 30px 35px;
+}
+.h-small {
+	@media (min-width: 1200px) {
+		font-size: 20px;
+	}
+}
+
+@each $value in $font-size-helpers {
+	.fs-#{$value} {
+		font-size: #{$value}px;
+	}
+}
+
+.fw-100 {
+	font-weight: 100;
+}
+
+.fw-300,
+.thin {
+	font-weight: 300;
+}
+
+.fw-400 {
+	font-weight: 400;
+}
+
+.fw-500 {
+	font-weight: 500;
+}
+
+.fw-700,
+.bolder {
+	font-weight: 700;
+}
+
+.fw-900,
+.bold {
+	font-weight: 900;
+}
+
+.rounded {
+	border-radius: 16px;
+}
+
+.rounded-small {
+	border-radius: 5px;
+}
+
+.rounded-circle {
+	border-radius: 50%;
+}
+
+.bordered {
+	border: 1px solid $borderColor;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.s-border-top {
+	border-top: 1px solid $borderColor;
+}
+
+.s-border-bottom {
+	border-bottom: 1px solid $borderColor;
+}
+
+.small-text {
+	font-size: 12px;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.c-border-bottom {
+	position: relative;
+
+	&:after {
+		content: '';
+		height: 1px;
+		background: $borderColor;
+		position: absolute;
+		left: -10%;
+		right: -10%;
+		bottom: 0;
+	}
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+.buttons_group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.rs-btn + .rs-btn {
+		margin-top: 20px;
+	}
+}
+
+/*display helpers*/
+// in addition to http://getbootstrap.com/docs/4.1/utilities/display/
+//hide all elements that are visible on certain resolutions
+[class*='visible-above-'],
+[class*='visible-below-'] {
+	display: none !important;
+}
+//showing elements - only display block.
+//if you need opposite, use hiding utilities
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	//showing on breakpoint and above
+	@media (min-width: #{$breakpoint-value}) {
+		.visible-above-#{$breakpoint-abbr} {
+			display: block !important;
+		}
+	}
+	//showing on breakpoint and below
+	@media (max-width: #{$breakpoint-value - 1px}) {
+		.visible-below-#{$breakpoint-abbr} {
+			display: block !important;
+		}
+	}
+}
+
+//hiding elements below certain breakpoints
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	//hiding on breakpoint and below
+	@media (max-width: #{$breakpoint-value - 1px}) {
+		.hidden-below-#{$breakpoint-abbr} {
+			display: none !important;
+		}
+	}
+	//hiding on breakpoint and above
+	@media (min-width: #{$breakpoint-value}) {
+		.hidden-above-#{$breakpoint-abbr} {
+			display: none !important;
+		}
+	}
+}

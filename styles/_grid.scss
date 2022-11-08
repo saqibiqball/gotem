@@ -1,0 +1,116 @@
+@use 'sass:math';
+
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.container-fluid {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+[class*='col-'] {
+	position: relative;
+	width: 100%;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+
+	&.five-cols {
+		flex: 0 0 19.9% !important;
+		max-width: 19.9% !important;
+	}
+
+	&.seven-cols {
+		flex: 0 0 14.285714285714285714285714285714% !important;
+		max-width: 14.285714285714285714285714285714% !important;
+	}
+}
+
+@for $width from 1 through $columns {
+	.col-#{$width} {
+		flex: 0 0 math.div($width, $columns) * 100%;
+		max-width: math.div($width, $columns) * 100%;
+	}
+}
+
+@for $width from 0 through $columns {
+	.offset-#{$width} {
+		margin-left: math.div(100%, $columns) * $width;
+	}
+}
+
+@for $width from 0 through $columns {
+	.order-#{$width} {
+		order: $width
+	}
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		@for $width from 1 through $columns {
+			.col-#{$breakpoint-abbr}-#{$width} {
+				flex: 0 0 math.div($width, $columns) * 100%;
+				max-width: math.div($width, $columns) * 100%;
+			}
+		}
+	}
+	@media (min-width: #{$breakpoint-value}) {
+		@for $width from 0 through $columns {
+			.offset-#{$breakpoint-abbr}-#{$width} {
+				margin-left: math.div(100%, $columns) * $width;
+			}
+		}
+	}
+	@media (min-width: #{$breakpoint-value}) {
+		@for $width from 0 through $columns {
+			.order-#{$breakpoint-abbr}-#{$width} {
+				order: $width;
+			}
+		}
+	}
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		[class*='col-'] {
+			&.five-cols-#{$breakpoint-abbr} {
+				flex: 0 0 19.9% !important;
+				max-width: 19.9% !important;
+			}
+		}
+	}
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		[class*='col-'] {
+			&.seven-cols-#{$breakpoint-abbr} {
+				flex: 0 0 14.285714285714285714285714285714%;
+				max-width: 14.285714285714285714285714285714%;
+			}
+		}
+	}
+}
+
+@each $breakpoint-abbr, $breakpoint-value in $container-max-widths {
+	@media (min-width: #{$breakpoint-abbr}) {
+		.container {
+			max-width: #{$breakpoint-value};
+		}
+	}
+}

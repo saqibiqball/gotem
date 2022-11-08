@@ -1,0 +1,75 @@
+.plan-buyer {
+	&-wrap {
+		padding: 30px;
+		border: 1px solid $borderColor;
+		background-color: $lightColor;
+		text-align: center;
+		position: relative;
+
+		@media (min-width: 1200px) {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+
+		&.deactivated {
+			& > *:not(.plan-buyer-settings) {
+				opacity: 0.5;
+			}
+		}
+	}
+
+	&-badge {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		transform: translateY(-50%);
+		background-color: $darkColor;
+		text-align: center;
+		color: $lightColor;
+		padding: 11px 20px;
+		margin-left: 20px;
+		margin-right: 20px;
+
+		&.main {
+			background-color: $colorMain;
+		}
+	}
+
+	&-content {
+		margin-top: 30px;
+	}
+
+	&-price {
+		margin-top: 30px;
+	}
+
+	&-btn {
+		margin-top: 30px;
+	}
+
+	&-settings {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+
+		.rs-dropdown-toggle {
+			padding: 5px;
+			line-height: 1;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: $greyColor;
+
+			span {
+				margin: 0 !important;
+				color: $colorMain;
+			}
+
+			.rs-dropdown-toggle-caret {
+				display: none;
+			}
+		}
+	}
+}

@@ -4,6 +4,7 @@ module.exports = {
 	images: {
 		domains: [
 			'localhost',
+			process.env.NEXT_PUBLIC_API_URL.match(/(http(?:s)?:\/\/)(.*)/)[2],
 			'stage.wprollers.com',
 			'crowdfunding.dev.wprollers.com',
 			'crowdfunding-app.dev.wprollers.com',

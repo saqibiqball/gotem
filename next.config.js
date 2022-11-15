@@ -4,9 +4,8 @@ module.exports = {
 	images: {
 		domains: [
 			'localhost',
-			'stage.wprollers.com',
-			'crowdfunding.dev.wprollers.com',
-			'crowdfunding-app.dev.wprollers.com',
+			'https://gotem-5k0ypcayz-saqibiqball.vercel.app',
+			'stingray-app-in3wv.ondigitalocean.app',
 		],
 		formats: ['image/webp'],
 	},
